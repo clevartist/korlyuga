@@ -4,7 +4,11 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-export default function SmoothScroll({ children }) {
+export default function SmoothScroll({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2, // Smoother, more delay (higher = more delay)
@@ -15,7 +19,7 @@ export default function SmoothScroll({ children }) {
       touchMultiplier: 2,
     });
 
-    function raf(time) {
+    function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
