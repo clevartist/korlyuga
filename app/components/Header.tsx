@@ -1,10 +1,14 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-100 bg-transparent">
       <div className="flex flex-row items-center justify-center container mx-auto px-4 py-4 gap-8 relative">
         {/* Left group */}
         <div className="hidden lg:flex text-white gap-8">
-          <button className="cursor-pointer">Фотография</button>
+          <Link className="cursor-pointer" href="/photography">
+            Фотография
+          </Link>
           <button className="cursor-pointer">Видеография</button>
           <button className="cursor-pointer">Архитектура</button>
         </div>
