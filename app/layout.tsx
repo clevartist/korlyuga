@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SmoothScroll from "./components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "Портфолио",
@@ -8,8 +9,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ru">
-      <body>{children}</body>
+    <html lang="ru" className="scroll-smooth md:scroll-auto">
+      <body>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
