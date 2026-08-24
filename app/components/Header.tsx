@@ -9,8 +9,12 @@ export default function Header() {
           <Link className="cursor-pointer" href="/photography">
             Фотография
           </Link>
-          <button className="cursor-pointer">Видеография</button>
-          <button className="cursor-pointer">Архитектура</button>
+          <Link className="cursor-pointer" href="/videography">
+            Видеография
+          </Link>
+          <Link className="cursor-pointer" href="/architecture">
+            Архитектура
+          </Link>
         </div>
 
         {/* Center image */}
@@ -22,9 +26,15 @@ export default function Header() {
 
         {/* Right group */}
         <div className="hidden lg:flex text-white gap-8">
-          <button className="cursor-pointer">Граф. дизайн</button>
-          <button className="cursor-pointer">Программирование</button>
-          <button className="cursor-pointer">Контакты</button>
+          <Link className="cursor-pointer" href="/graphic-design">
+            Граф. дизайн
+          </Link>
+          <Link className="cursor-pointer" href="/coding">
+            Программирование
+          </Link>
+          <Link className="cursor-pointer" href="/contacts">
+            Контакты
+          </Link>
         </div>
 
         {/* Menu dropdown */}
