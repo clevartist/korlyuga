@@ -26,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="overflow-x-hidden">
         {/* menu dropdown */}
         <input
-          className="text-white absolute right-0 z-101 w-8 object-contain mt-4 mr-4 cursor-pointer"
+          className="text-white fixed right-0 z-101 w-8 object-contain mt-4 mr-4 cursor-pointer"
           type="image"
           src="/icons/hamburger_menu.svg"
           onClick={() => setSideBarToggle(!sideBarToggle)}
@@ -37,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         {/* Backdrop - always rendered but with opacity transition */}
         <div
-          className={`fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 ${
+          className={`fixed inset-0 bg-black/30 z-50 transition-opacity duration-300 ${
             sideBarToggle
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           onClick={() => setSideBarToggle(false)}
         />
 
-        {/* Sidebar with slide animation */}
+        {/* Sidebar with slide animation - MOVED OUTSIDE SmoothScroll */}
         <div
           className={`fixed right-0 h-screen w-screen md:w-1/3 z-100 transition-transform duration-300 ease-in-out ${
             sideBarToggle ? "translate-x-0" : "translate-x-full"

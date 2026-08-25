@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
-.sidebar {
-  padding: 10px;
-  padding-top: 20px;
-  text-align: right;
+html {
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 #liquid-glass-sidebar {
   --transition: 0.4s cubic-bezier(0.5, 1.5, 0.5, 1);
-  position: absolute;
+  position: fixed;
   width: screen;
   height: screen;
   right: 0;

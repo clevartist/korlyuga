@@ -3,8 +3,8 @@ import "../globals.css";
 
 export default function SideBar() {
   return (
-    <div className="sidebar">
-      <div className="liquid-glass__menus">
+    <div className="p-10 pt-15 text-right">
+      <div className="liquid-glass__menus relative z-10">
         <Link href="/" className="text-white">
           Home
         </Link>
