@@ -9,5 +9,25 @@
       { "id": 2, "imageURL": "/photography/preview/2.jpg" },
       { "id": 3, "imageURL": "/photography/preview/3.jpg" }
     ]
+  },
+  "videography": {
+    "name": "Видеография",
+    "previews": [{ "id": 1, "imageURL": "/videography/preview/1.mp4" }]
+  },
+  "architecture": {
+    "name": "Архитектура",
+    "previews": [{ "id": 1, "imageURL": "/architecture/preview/1.mp4" }]
+  },
+  "graphic-design": {
+    "name": "Графический дизайн",
+    "previews": [{ "id": 1, "imageURL": "/photography/preview/1.png" }]
+  },
+  "programming": {
+    "name": "Программирование",
+    "previews": [{ "id": 1, "imageURL": "/photography/preview/1.png" }]
+  },
+  "contacts": {
+    "name": "Контакты",
+    "previews": [{ "id": 1, "imageURL": "/photography/preview/1.png" }]
   }
 }

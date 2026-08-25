@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
-      <div className="flex flex-row items-center justify-center container mx-auto px-4 py-4 gap-8 relative">
+      <div className="flex flex-row items-center justify-center container mx-auto px-4 py-4 gap-8 relative font-gazeta">
         {/* Left group */}
         <div className="hidden lg:flex text-white gap-8">
           <Link className="cursor-pointer" href="/nav/photography">
@@ -30,7 +30,7 @@ export default function Header() {
           <Link className="cursor-pointer" href="/nav/graphic-design">
             Граф. дизайн
           </Link>
-          <Link className="cursor-pointer" href="/nav/coding">
+          <Link className="cursor-pointer" href="/nav/programming">
             Программирование
           </Link>
           <Link className="cursor-pointer" href="/nav/contacts">
