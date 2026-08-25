@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+.sidebar {
+  padding: 10px;
+  padding-top: 20px;
+  text-align: right;
+}
+
+#liquid-glass-sidebar {
+  --transition: 0.4s cubic-bezier(0.5, 1.5, 0.5, 1);
+  position: absolute;
+  width: screen;
+  height: screen;
+  right: 0;
+}
+
+.liquid-glass--bend {
+  backdrop-filter: blur(10px);
+  filter: url(#glass-blur);
+  inset: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.liquid-glass--face {
+  box-shadow:
+    0 4px 4px rgba(0, 0, 0, 0.15),
+    0 0 12px rgba(0, 0, 0, 0.08);
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.liquid-glass--edge {
+  box-shadow:
+    inset 3px 3px 3px 0 rgba(79, 70, 64, 0.45),
+    inset -3px -3px 3px 0 rgba(58, 54, 45, 0.45);
+  inset: 0;
+  position: absolute;
+  z-index: 2;
+}
