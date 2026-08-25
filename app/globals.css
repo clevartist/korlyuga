@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Gazeta";
+  src: url("/fonts/gazeta.ttf") format("truetype");
+}
+
+@theme {
+  --font-gazeta: Gazeta;
+}
+
 html {
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */

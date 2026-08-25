@@ -1,0 +1,13 @@
+{
+  "photography": {
+    "name": "Фотография",
+    "previews": [
+      {
+        "id": 1,
+        "imageURL": "/photography/preview/1.png"
+      },
+      { "id": 2, "imageURL": "/photography/preview/2.jpg" },
+      { "id": 3, "imageURL": "/photography/preview/3.jpg" }
+    ]
+  }
+}

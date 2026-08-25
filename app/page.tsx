@@ -1,21 +1,11 @@
 export default function Home() {
   return (
-    <div>
-      <div className="bg-[url('/home_bg.png')] bg-cover bg-center bg-no-repeat min-h-screen flex justify-end pt-20">
-        <div className="w-1/2 flex items-center justify-center">
-          <img
-            className="hidden md:block w-2/3 object-contain"
-            src="/welcome_text.png"
-          />
-        </div>
-      </div>
-      <div className="bg-[url('/home_bg.png')] bg-cover bg-center bg-no-repeat min-h-screen flex justify-end pt-20">
-        <div className="w-1/2 flex items-center justify-center">
-          <img
-            className="hidden md:block w-2/3 object-contain"
-            src="/welcome_text.png"
-          />
-        </div>
+    <div className="bg-[url('/home_bg.png')] bg-cover bg-center bg-no-repeat min-h-screen flex justify-end pt-20">
+      <div className="w-1/2 flex items-center justify-center">
+        <img
+          className="hidden md:block w-2/3 object-contain"
+          src="/welcome_text.png"
+        />
       </div>
     </div>
   );
