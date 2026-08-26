@@ -40,8 +40,8 @@ export default function Page() {
                group-hover:brightness-100 group-hover:scale-105 
                transition duration-200 ease-in-out"
               alt="События"
-              width={400}
-              height={400}
+              width={500}
+              height={500}
             />
           </div>
 
@@ -64,8 +64,106 @@ export default function Page() {
         <h1 className="text-white text-6xl pb-10">Альбомы</h1>
       </div>
 
-      <div className="bg-white pl-20 pr-20 pt-20">
+      <div className="flex flex-col bg-white pl-20 pr-20 pt-20 gap-30">
         <h1 className="text-6xl pb-10">Премии</h1>
+        <div className="flex gap-8">
+          <div className="w-1/4">
+            <Image
+              src="/photography/bibliobicicleta_2025.png"
+              alt="BiblioBicicleta 2025"
+              width={800}
+              height={800}
+            />
+          </div>
+          <div className="w-2/4">
+            <h1 className="text-center text-4xl pb-6">
+              BiblioBicicleta 2025 - Брашов, Румыния
+            </h1>
+            <p className="text-center text-xl">
+              Однозначно, базовые сценарии поведения пользователей смешаны с не
+              уникальными данными до степени совершенной неузнаваемости, из-за
+              чего возрастает их статус бесполезности. Банальные, но
+              неопровержимые выводы, а также активно развивающиеся страны
+              третьего мира ограничены исключительно образом мышления. В
+              частности, сплочённость команды профессионалов играет важную роль
+              в формировании модели развития!
+            </p>
+          </div>
+          <div className="w-1/4">
+            <Image
+              src="/photography/bibliobicicleta_2025_published.png"
+              alt="BiblioBicicleta 2025 my published work"
+              width={800}
+              height={800}
+            />
+          </div>
+        </div>
+
+        <div className="flex gap-8">
+          <div className="w-1/4">
+            <Image
+              src="/photography/e_visual_debut_2024.png"
+              alt="E VISUAL ART DEBUT 2024"
+              width={800}
+              height={800}
+            />
+          </div>
+          <div className="w-2/4">
+            <h1 className="text-center text-4xl pb-6">
+              E VISUAL ART DEBUT 2024 - Брашов, Румыния
+            </h1>
+            <p className="text-center text-xl">
+              Однозначно, базовые сценарии поведения пользователей смешаны с не
+              уникальными данными до степени совершенной неузнаваемости, из-за
+              чего возрастает их статус бесполезности. Банальные, но
+              неопровержимые выводы, а также активно развивающиеся страны
+              третьего мира ограничены исключительно образом мышления. В
+              частности, сплочённость команды профессионалов играет важную роль
+              в формировании модели развития!
+            </p>
+          </div>
+          <div className="w-1/4">
+            <Image
+              src="/photography/e_visual_debut_2024_published.png"
+              alt="E VISUAL ART DEBUT 2024 MY PUBLISHED WORK"
+              width={800}
+              height={800}
+            />
+          </div>
+        </div>
+
+        <div className="flex gap-8">
+          <div className="w-1/4">
+            <Image
+              src="/photography/bibliobicicleta_2024.png"
+              alt="BiblioBicicleta 2024"
+              width={800}
+              height={800}
+            />
+          </div>
+          <div className="w-2/4">
+            <h1 className="text-center text-4xl pb-6">
+              BiblioBicicleta 2024 - Брашов, Румыния
+            </h1>
+            <p className="text-center text-xl">
+              Однозначно, базовые сценарии поведения пользователей смешаны с не
+              уникальными данными до степени совершенной неузнаваемости, из-за
+              чего возрастает их статус бесполезности. Банальные, но
+              неопровержимые выводы, а также активно развивающиеся страны
+              третьего мира ограничены исключительно образом мышления. В
+              частности, сплочённость команды профессионалов играет важную роль
+              в формировании модели развития!
+            </p>
+          </div>
+          <div className="w-1/4">
+            <Image
+              src="/photography/bibliobicicleta_2024_published.png"
+              alt="BiblioBicicleta 2024 my published work"
+              width={800}
+              height={800}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -9,6 +9,11 @@
   --font-gazeta: Gazeta;
 }
 
+::selection {
+  background-color: #cba569;
+  color: white;
+}
+
 html {
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
