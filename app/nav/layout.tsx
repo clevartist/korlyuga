@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import NavLayout from "./nav-layout.json";
+import Image from "next/image";
 
 export default function RootLayout({
   children,
@@ -73,10 +74,12 @@ export default function RootLayout({
             className="w-full h-full object-cover"
           />
         ) : (
-          <img
+          <Image
             src={mediaURL}
             alt={sectionName}
             className="w-full h-full object-cover"
+            width={3000}
+            height={3000}
           />
         )}
       </div>
