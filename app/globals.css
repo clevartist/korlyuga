@@ -16,11 +16,8 @@ html {
 }
 
 body {
-  overflow: hidden; /* Hide scrollbars */
-}
-
-div {
-  overflow: hidden;
+  overflow-x: hidden; /* keep horizontal clipping if you want no side-scroll */
+  overflow-y: auto;
 }
 
 #liquid-glass-sidebar {

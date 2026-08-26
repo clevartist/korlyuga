@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div className="min-h-[200vh] no-scrollbar">
+    <div>
       <div>
         <h1>Категории</h1>
         <div className="flex flex-row w-screen">

@@ -57,28 +57,30 @@ export default function RootLayout({
   const isVideoFile = mediaURL ? isVideo(mediaURL) : false;
 
   return (
-    <main className="h-screen">
-      <div className="flex h-3/4 items-center justify-center relative">
-        <span className="absolute text-white font-gazeta text-6xl md:text-9xl z-10">
-          {sectionName}
-        </span>
+    <main>
+      <div className="h-screen">
+        <div className="flex h-3/4 items-center justify-center relative">
+          <span className="absolute text-white font-gazeta text-6xl md:text-9xl z-10">
+            {sectionName}
+          </span>
 
-        {isVideoFile ? (
-          <video
-            src={mediaURL}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <img
-            src={mediaURL}
-            alt={sectionName}
-            className="w-full h-full object-cover"
-          />
-        )}
+          {isVideoFile ? (
+            <video
+              src={mediaURL}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <img
+              src={mediaURL}
+              alt={sectionName}
+              className="w-full h-full object-cover"
+            />
+          )}
+        </div>
       </div>
       <div>{children}</div>
     </main>
