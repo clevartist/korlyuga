@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 export default function Page() {
@@ -76,7 +78,8 @@ export default function Page() {
             />
           </div>
           <div className="w-2/4">
-            <h1 className="text-center text-4xl pb-6">
+            <h1 className="text-center text-4xl">🥇 1-е место 🥇</h1>
+            <h1 className="text-center text-2xl pb-6">
               BiblioBicicleta 2025 - Брашов, Румыния
             </h1>
             <p className="text-center text-xl">
@@ -109,6 +112,7 @@ export default function Page() {
             />
           </div>
           <div className="w-2/4">
+            <h1 className="text-center text-4xl">🥇 1-е место 🥇</h1>
             <h1 className="text-center text-4xl pb-6">
               E VISUAL ART DEBUT 2024 - Брашов, Румыния
             </h1>
@@ -142,6 +146,7 @@ export default function Page() {
             />
           </div>
           <div className="w-2/4">
+            <h1 className="text-center text-4xl">🥈 2-е место 🥈</h1>
             <h1 className="text-center text-4xl pb-6">
               BiblioBicicleta 2024 - Брашов, Румыния
             </h1>
