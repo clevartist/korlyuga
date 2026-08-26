@@ -58,29 +58,27 @@ export default function RootLayout({
 
   return (
     <main>
-      <div className="h-screen">
-        <div className="flex h-3/4 items-center justify-center relative">
-          <span className="absolute text-white font-gazeta text-6xl md:text-9xl z-10">
-            {sectionName}
-          </span>
+      <div className="h-[75vh] flex items-center justify-center relative">
+        <span className="absolute text-white font-gazeta text-6xl md:text-9xl z-10">
+          {sectionName}
+        </span>
 
-          {isVideoFile ? (
-            <video
-              src={mediaURL}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <img
-              src={mediaURL}
-              alt={sectionName}
-              className="w-full h-full object-cover"
-            />
-          )}
-        </div>
+        {isVideoFile ? (
+          <video
+            src={mediaURL}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <img
+            src={mediaURL}
+            alt={sectionName}
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
       <div>{children}</div>
     </main>

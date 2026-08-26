@@ -1,8 +1,37 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change background after scrolling 50px
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-gray backdrop-blur-[10px] shadow-[0_4px_4px_rgba(0,0,0,0.15),0_0_12px_rgba(0,0,0,0.08)] border border-[#3a362d73]/20"
+          : "bg-transparent"
+      }`}
+    >
       <div className="flex flex-row items-center justify-center container mx-auto px-4 py-4 gap-8 relative font-gazeta">
         {/* Left group */}
         <div className="hidden lg:flex text-white gap-8">
@@ -37,8 +66,6 @@ export default function Header() {
             Контакты
           </Link>
         </div>
-
-        {/* Menu dropdown */}
       </div>
     </header>
   );

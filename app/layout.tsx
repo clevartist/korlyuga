@@ -22,7 +22,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   }, [sideBarToggle]);
 
   return (
-    <html lang="ru" className="scroll-smooth md:scroll-auto overflow-x-hidden">
+    <html
+      lang="ru"
+      className="scroll-smooth md:scroll-auto overflow-x-hidden font-gazeta"
+    >
       <body className="overflow-x-hidden">
         {/* menu dropdown */}
         <input
