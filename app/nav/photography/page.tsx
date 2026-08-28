@@ -1,8 +1,46 @@
-"use client";
-
+// app/nav/photography/page.tsx
+import fs from "fs";
+import path from "path";
 import Image from "next/image";
+import Link from "next/link";
+
+// Helper to read album folders and their metadata
+function getAlbums() {
+  const albumsDir = path.join(process.cwd(), "public/photography/albums");
+  if (!fs.existsSync(albumsDir)) return [];
+
+  const folders = fs
+    .readdirSync(albumsDir)
+    .filter((item) => fs.statSync(path.join(albumsDir, item)).isDirectory());
+
+  return folders.map((folder) => {
+    const folderPath = path.join(albumsDir, folder);
+    const metadataPath = path.join(folderPath, "metadata.json");
+    let metadata = { title: folder, description: "" };
+    if (fs.existsSync(metadataPath)) {
+      metadata = JSON.parse(fs.readFileSync(metadataPath, "utf-8"));
+    }
+
+    // Get the first 4 image files for preview
+    const imageFiles = fs
+      .readdirSync(folderPath)
+      .filter((file) => /\.(jpg|jpeg|png|webp)$/i.test(file));
+    const previewImages = imageFiles.slice(0, 4).map((file) => ({
+      src: `/photography/albums/${folder}/${file}`,
+    }));
+
+    return {
+      slug: folder,
+      title: metadata.title || folder,
+      description: metadata.description || "",
+      previewImages,
+    };
+  });
+}
 
 export default function Page() {
+  const albums = getAlbums();
+
   return (
     <div className="pt-20 pb-20">
       <div className="pl-20 pr-20 pb-10">
@@ -62,9 +100,48 @@ export default function Page() {
         </div>
       </div>
 
+      {/*from here*/}
+
       <div className="bg-black pl-20 pr-20 pt-20">
         <h1 className="text-white text-6xl pb-10">Альбомы</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {albums.map((album) => (
+            <Link
+              key={album.slug}
+              href={`/nav/photography/albums/${album.slug}`}
+            >
+              <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
+                {/* Preview grid of first 4 images */}
+                <div className="grid grid-cols-2 grid-rows-2 gap-1 h-48">
+                  {album.previewImages.map((img, idx) => (
+                    <div key={idx} className="relative w-full h-full">
+                      <Image
+                        src={img.src}
+                        alt={`${album.title} preview ${idx + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                  {/* If fewer than 4 images, fill with placeholder */}
+                  {album.previewImages.length < 4 &&
+                    [...Array(4 - album.previewImages.length)].map((_, i) => (
+                      <div key={`placeholder-${i}`} className="bg-gray-200" />
+                    ))}
+                </div>
+                <div className="p-4">
+                  <h2 className="text-xl font-semibold">{album.title}</h2>
+                  <p className="text-sm text-gray-600 truncate">
+                    {album.description}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
+
+      {/*to here*/}
 
       <div className="flex flex-col bg-white pl-20 pr-20 pt-20 gap-30">
         <h1 className="text-6xl pb-10">Премии</h1>
