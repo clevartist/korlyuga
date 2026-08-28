@@ -12,13 +12,13 @@ export default function RootLayout({
 }) {
   const pathname = usePathname();
 
-  // Get the current section from the pathname
-  const currentSection = pathname.split("/").pop() || "";
+  // Find which known nav section this path belongs to,
+  // by checking segments in order rather than just the last one
+  const segments = pathname.split("/").filter(Boolean); // e.g. ["nav","photography","albums","wedding"]
+  const currentSection = segments.find((seg) => seg in NavLayout) || "";
 
-  // Check if section exists in NavLayout
   const sectionData = NavLayout[currentSection as keyof typeof NavLayout];
 
-  // If section doesn't exist, show 404
   if (!sectionData) {
     return (
       <main className="h-screen flex items-center justify-center">
@@ -32,22 +32,18 @@ export default function RootLayout({
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Reset index when section changes
   useEffect(() => {
     setCurrentIndex(0);
   }, [currentSection]);
 
   useEffect(() => {
     if (previews.length <= 1) return;
-
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % previews.length);
     }, 3000);
-
     return () => clearInterval(interval);
   }, [previews.length]);
 
-  // Helper function to check if file is video
   const isVideo = (url: string) => {
     const videoExtensions = [".mp4", ".mov", ".avi"];
     return videoExtensions.some((ext) => url.toLowerCase().endsWith(ext));
@@ -63,7 +59,6 @@ export default function RootLayout({
         <span className="absolute text-white font-gazeta text-6xl md:text-9xl z-10">
           {sectionName}
         </span>
-
         {isVideoFile ? (
           <video
             src={mediaURL}

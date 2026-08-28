@@ -66,7 +66,7 @@ export default async function AlbumPage({
       )}
 
       {album.images.length === 0 ? (
-        <p className="text-gray-500">No images found in this album</p>
+        <p className="text-xl text-gray-500">Нет фото...</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {album.images.map((img, idx) => (

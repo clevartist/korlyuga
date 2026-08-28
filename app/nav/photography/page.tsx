@@ -102,7 +102,7 @@ export default function Page() {
 
       {/*from here*/}
 
-      <div className="bg-black pl-20 pr-20 pt-20">
+      <div className="bg-black pl-20 pr-20 pt-20 pb-20">
         <h1 className="text-white text-6xl pb-10">Альбомы</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {albums.map((album) => (
