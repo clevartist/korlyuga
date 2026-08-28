@@ -108,7 +108,7 @@ export default function Page() {
           {albums.map((album) => (
             <Link
               key={album.slug}
-              href={`/nav/photography/albums/${album.slug}`}
+              href={`/nav/photography/albums/${album.slug}#album-content`}
             >
               <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
                 {/* Preview grid of first 4 images */}

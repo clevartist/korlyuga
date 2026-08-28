@@ -54,12 +54,8 @@ export default async function AlbumPage({
   const album = getAlbumData(slug);
   if (!album) notFound();
 
-  // Debug: Log to see if we have data
-  console.log("Album data:", album);
-  console.log("Number of images:", album.images.length);
-
   return (
-    <div className="pt-20 pb-20 px-4 md:px-20">
+    <div className="pt-20 pb-20 px-4 md:px-20 scroll-mt-20" id="album-content">
       <h1 className="text-5xl font-bold mb-4">{album.title}</h1>
       {album.description && (
         <p className="text-xl text-gray-600 mb-8">{album.description}</p>
