@@ -104,15 +104,16 @@ export default function Page() {
 
       <div className="bg-black pl-20 pr-20 pt-20 pb-20">
         <h1 className="text-white text-6xl pb-10">Альбомы</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="flex flex-wrap gap-8">
           {albums.map((album) => (
             <Link
               key={album.slug}
               href={`/nav/photography/albums/${album.slug}#album-content`}
+              className="flex-none"
             >
-              <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
+              <div className="bg-white text-white w-fit">
                 {/* Preview grid of first 4 images */}
-                <div className="grid grid-cols-2 grid-rows-2 gap-1 h-48">
+                <div className="grid grid-cols-2 grid-rows-2 gap-1 h-68 w-110">
                   {album.previewImages.map((img, idx) => (
                     <div key={idx} className="relative w-full h-full">
                       <Image
@@ -123,15 +124,16 @@ export default function Page() {
                       />
                     </div>
                   ))}
-                  {/* If fewer than 4 images, fill with placeholder */}
                   {album.previewImages.length < 4 &&
                     [...Array(4 - album.previewImages.length)].map((_, i) => (
-                      <div key={`placeholder-${i}`} className="bg-gray-200" />
+                      <div key={`placeholder-${i}`} className="bg-gray-900" />
                     ))}
                 </div>
                 <div className="p-4">
-                  <h2 className="text-xl font-semibold">{album.title}</h2>
-                  <p className="text-sm text-gray-600 truncate">
+                  <h2 className="text-3xl font-bold text-black">
+                    {album.title}
+                  </h2>
+                  <p className="text-md text-gray-500 truncate w-[50ch]">
                     {album.description}
                   </p>
                 </div>
